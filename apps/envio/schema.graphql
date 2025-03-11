@@ -1,0 +1,58 @@
+type StationRegistry_AccountCreated {
+  id: ID!
+  account: String!
+  accountAdmin: String!
+}
+
+type StationRegistry_ModuleKeeperUpdated {
+  id: ID!
+  newModuleKeeper: String!
+}
+
+type StationRegistry_RoleAdminChanged {
+  id: ID!
+  role: String!
+  previousAdminRole: String!
+  newAdminRole: String!
+}
+
+type StationRegistry_RoleGranted {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type StationRegistry_RoleRevoked {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type StationRegistry_SignerAdded {
+  id: ID!
+  account: String!
+  signer: String!
+}
+
+type StationRegistry_SignerRemoved {
+  id: ID!
+  account: String!
+  signer: String!
+}
+
+type StationRegistry_SpaceCreated {
+  id: ID!
+  owner: String!
+  stationId: BigInt!
+  space: String!
+}
+
+type StationRegistry_StationOwnershipTransferred {
+  id: ID!
+  stationId: BigInt!
+  oldOwner: String!
+  newOwner: String!
+}
+
