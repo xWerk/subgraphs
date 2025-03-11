@@ -1,7 +1,10 @@
-type StationRegistry_AccountCreated {
+type Space_Transfer {
   id: ID!
-  account: String!
-  accountAdmin: String!
+  chainId: String!
+  asset: String!
+  from: String!
+  to: String!
+  value: BigInt!
 }
 
 type StationRegistry_ModuleKeeperUpdated {
@@ -55,4 +58,3 @@ type StationRegistry_StationOwnershipTransferred {
   oldOwner: String!
   newOwner: String!
 }
-
