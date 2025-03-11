@@ -10,3 +10,13 @@ StationRegistry.SpaceCreated.handler(async ({ event, context }) => {
 
   context.StationRegistry_SpaceCreated.set(entity);
 });
+
+/// Handler to register a `Space` contract through the {SpaceCreated} event
+StationRegistry.SpaceCreated.contractRegister(
+  ({ event, context }) => {
+    context.addSpace(event.params.space);
+  },
+  {
+    preRegisterDynamicContracts: true, // reduces indexing time
+  }
+);
