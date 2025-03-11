@@ -1,36 +1,41 @@
 import assert from "assert";
-import { 
-  TestHelpers,
-  StationRegistry_AccountCreated
-} from "generated";
+import { TestHelpers, StationRegistry_SpaceCreated } from "generated";
 const { MockDb, StationRegistry } = TestHelpers;
 
-describe("StationRegistry contract AccountCreated event tests", () => {
+describe("StationRegistry contract SpaceCreated event tests", () => {
   // Create mock db
   const mockDb = MockDb.createMockDb();
 
-  // Creating mock for StationRegistry contract AccountCreated event
-  const event = StationRegistry.AccountCreated.createMockEvent({/* It mocks event fields with default values. You can overwrite them if you need */});
+  // Creating mock for StationRegistry contract SpaceCreated event
+  const event = StationRegistry.SpaceCreated.createMockEvent({
+    /* It mocks event fields with default values. You can overwrite them if you need */
+  });
 
-  it("StationRegistry_AccountCreated is created correctly", async () => {
+  it("StationRegistry_SpaceCreated is created correctly", async () => {
     // Processing the event
-    const mockDbUpdated = await StationRegistry.AccountCreated.processEvent({
+    const mockDbUpdated = await StationRegistry.SpaceCreated.processEvent({
       event,
       mockDb,
     });
 
     // Getting the actual entity from the mock database
-    let actualStationRegistryAccountCreated = mockDbUpdated.entities.StationRegistry_AccountCreated.get(
+    let actualStationRegistrySpaceCreated = mockDbUpdated.entities.StationRegistry_SpaceCreated.get(
       `${event.chainId}_${event.block.number}_${event.logIndex}`
     );
 
     // Creating the expected entity
-    const expectedStationRegistryAccountCreated: StationRegistry_AccountCreated = {
+    const expectedStationRegistrySpaceCreated: StationRegistry_SpaceCreated = {
       id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
-      account: event.params.account,
-      accountAdmin: event.params.accountAdmin,
+      owner: event.params.owner,
+      stationId: event.params.stationId,
+      space: event.params.space,
     };
+
     // Asserting that the entity in the mock database is the same as the expected entity
-    assert.deepEqual(actualStationRegistryAccountCreated, expectedStationRegistryAccountCreated, "Actual StationRegistryAccountCreated should be the same as the expectedStationRegistryAccountCreated");
+    assert.deepEqual(
+      actualStationRegistrySpaceCreated,
+      expectedStationRegistrySpaceCreated,
+      "Actual StationRegistrySpaceCreated should be the same as the expectedStationRegistrySpaceCreated"
+    );
   });
 });
