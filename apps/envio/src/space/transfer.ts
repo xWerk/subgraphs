@@ -1,9 +1,10 @@
 import { Space_Transfer, USDC } from "generated";
-
-const WHITELISTED_ADDRESSES = "0xc8bA2314dD3268cE7f0F33B1A9dA92e775036eAb";
+import { tryFetchFromEndpoint } from "../utils/get-space-addresses";
 
 USDC.Transfer.handler(async ({ event, context }) => {
-  if (WHITELISTED_ADDRESSES === event.params.from || WHITELISTED_ADDRESSES === event.params.to) {
+  const spaceAddresses = await tryFetchFromEndpoint(context);
+
+  if (spaceAddresses.includes(event.params.from) || spaceAddresses.includes(event.params.to)) {
     const entity: Space_Transfer = {
       id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
       chainId: event.chainId.toString(),
