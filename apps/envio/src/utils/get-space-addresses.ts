@@ -1,6 +1,7 @@
 import { handlerContext } from "generated";
 
 const endpoint = "https://backend-dev.werk.pro/space/get-addresses";
+const enableCaching = false;
 let cachedAddresses: Array<string> = [];
 
 async function fetchFromEndpoint(context: handlerContext): Promise<Array<string> | null> {
@@ -19,7 +20,7 @@ async function fetchFromEndpoint(context: handlerContext): Promise<Array<string>
 }
 
 export async function tryFetchFromEndpoint(context: handlerContext): Promise<Array<string>> {
-  if (cachedAddresses.length > 0) {
+  if (enableCaching && cachedAddresses.length > 0) {
     return cachedAddresses;
   }
 
