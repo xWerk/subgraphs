@@ -4,6 +4,7 @@ import { ZERO_ADDRESS } from "../../constants";
 Space.NativeReceived.handler(async ({ event, context }) => {
   const entity: Space_Transfer = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
+    timestamp: BigInt(event.block.timestamp),
     chainId: event.chainId.toString(),
     asset: ZERO_ADDRESS,
     from: event.params.from,

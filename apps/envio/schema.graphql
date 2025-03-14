@@ -1,5 +1,6 @@
 type Space_Transfer {
   id: ID!
+  timestamp: BigInt!
   chainId: String!
   asset: String!
   from: String!

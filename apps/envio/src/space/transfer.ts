@@ -7,6 +7,7 @@ USDC.Transfer.handler(async ({ event, context }) => {
   if (spaceAddresses.includes(event.params.from) || spaceAddresses.includes(event.params.to)) {
     const entity: Space_Transfer = {
       id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
+      timestamp: BigInt(event.block.timestamp),
       chainId: event.chainId.toString(),
       asset: event.srcAddress,
       from: event.params.from,
