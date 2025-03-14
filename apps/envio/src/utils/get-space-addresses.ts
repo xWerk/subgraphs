@@ -1,6 +1,6 @@
 import { handlerContext } from "generated";
 
-const endpoint = `${process.env.WERK_API_ENDPOINT}/space/get-addresses`;
+const endpoint = "https://backend-dev.werk.pro/space/get-addresses";
 let cachedAddresses: Array<string> = [];
 
 async function fetchFromEndpoint(context: handlerContext): Promise<Array<string> | null> {
