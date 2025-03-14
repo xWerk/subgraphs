@@ -26,7 +26,7 @@ contracts:
       - event: Transfer(address indexed from, address indexed to, uint256 value)
 networks:
   - id: 84532 # Base Sepolia
-    start_block: 0
+    start_block: 21451964
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
@@ -36,7 +36,7 @@ networks:
         address:
           - 0x036CbD53842c5426634e7929541eC2318f3dCF7e
   - id: 11155111 # Ethereum Sepolia
-    start_block: 0
+    start_block: 7638308
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
