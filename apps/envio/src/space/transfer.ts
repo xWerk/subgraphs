@@ -1,8 +1,8 @@
 import { Space_Transfer, USDC } from "generated";
-import { tryFetchFromEndpoint } from "../utils/get-space-addresses";
+import { getSpaceAddresses } from "../utils/get-space-addresses";
 
 USDC.Transfer.handler(async ({ event, context }) => {
-  const spaceAddresses = await tryFetchFromEndpoint(context);
+  const spaceAddresses = await getSpaceAddresses(context);
 
   if (spaceAddresses.includes(event.params.from) || spaceAddresses.includes(event.params.to)) {
     const entity: Space_Transfer = {

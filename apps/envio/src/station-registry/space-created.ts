@@ -1,4 +1,5 @@
 import { StationRegistry, StationRegistry_SpaceCreated } from "generated";
+import { addSpaceAddress } from "../utils/get-space-addresses";
 
 StationRegistry.SpaceCreated.handler(async ({ event, context }) => {
   const entity: StationRegistry_SpaceCreated = {
@@ -7,6 +8,9 @@ StationRegistry.SpaceCreated.handler(async ({ event, context }) => {
     stationId: event.params.stationId,
     space: event.params.space,
   };
+
+  // Add the Space address to the cached list of addresses
+  addSpaceAddress(event.params.space);
 
   context.StationRegistry_SpaceCreated.set(entity);
 });
