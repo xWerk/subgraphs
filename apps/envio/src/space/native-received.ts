@@ -11,6 +11,7 @@ Space.NativeReceived.handler(async ({ event, context }) => {
     from: event.params.from,
     to: event.srcAddress,
     value: formatUnits(event.params.amount, 18),
+    hash: event.transaction.hash,
   };
 
   context.Space_Transfer.set(entity);

@@ -14,6 +14,7 @@ USDC.Transfer.handler(async ({ event, context }) => {
       from: event.params.from,
       to: event.params.to,
       value: formatUnits(event.params.value, 6),
+      hash: event.transaction.hash,
     };
 
     context.Space_Transfer.set(entity);

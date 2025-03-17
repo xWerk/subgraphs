@@ -6,6 +6,7 @@ type Space_Transfer {
   from: String!
   to: String!
   value: String!
+  hash: Bytes!
 }
 
 type StationRegistry_ModuleKeeperUpdated {
