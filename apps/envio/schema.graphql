@@ -5,7 +5,7 @@ type Space_Transfer {
   asset: String!
   from: String!
   to: String!
-  value: BigInt!
+  value: String!
 }
 
 type StationRegistry_ModuleKeeperUpdated {
