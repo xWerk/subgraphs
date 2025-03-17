@@ -1,5 +1,6 @@
 import { Space, Space_Transfer } from "generated";
 import { ZERO_ADDRESS } from "../../constants";
+import { formatUnits } from "viem";
 
 Space.NativeReceived.handler(async ({ event, context }) => {
   const entity: Space_Transfer = {
@@ -9,7 +10,7 @@ Space.NativeReceived.handler(async ({ event, context }) => {
     asset: ZERO_ADDRESS,
     from: event.params.from,
     to: event.srcAddress,
-    value: event.params.amount,
+    value: formatUnits(event.params.amount, 18),
   };
 
   context.Space_Transfer.set(entity);

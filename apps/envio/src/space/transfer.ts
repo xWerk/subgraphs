@@ -1,5 +1,6 @@
 import { Space_Transfer, USDC } from "generated";
 import { getSpaceAddresses } from "../utils/get-space-addresses";
+import { formatUnits } from "viem";
 
 USDC.Transfer.handler(async ({ event, context }) => {
   const spaceAddresses = await getSpaceAddresses(context);
@@ -12,7 +13,7 @@ USDC.Transfer.handler(async ({ event, context }) => {
       asset: event.srcAddress,
       from: event.params.from,
       to: event.params.to,
-      value: event.params.value,
+      value: formatUnits(event.params.value, 6),
     };
 
     context.Space_Transfer.set(entity);
