@@ -47,6 +47,12 @@ type StationRegistry_SignerRemoved {
   signer: String!
 }
 
+type StationRegistry_Spaces {
+  id: ID!
+  chainId: String!
+  spaces: [String!]!
+}
+
 type StationRegistry_SpaceCreated {
   id: ID!
   owner: String!
