@@ -8,6 +8,7 @@
     "mocha": "ts-mocha test/**/*.ts",
     "codegen": "envio codegen",
     "dev": "envio dev",
+    "stop": "envio stop",
     "test": "pnpm mocha",
     "start": "ts-node generated/src/Index.bs.js"
   },
