@@ -5,7 +5,7 @@ import { USDC_ADDRESS } from "../../constants";
 Space.Transfer.handler(
   async ({ event, context }) => {
     // Filter and store only the USDC transfers that involve a Space address
-    if (event.srcAddress === USDC_ADDRESS[event.chainId as keyof typeof USDC_ADDRESS]) {
+    if (event.srcAddress === USDC_ADDRESS[event.chainId]) {
       const entity: Space_Transfer = {
         id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
         timestamp: BigInt(event.block.timestamp),
