@@ -33,12 +33,12 @@ networks:
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0xe1026Ab8272746dc93Efcd1423355F3b23E3e0aB
+          - 0x05880666779aeE8ff9492740c64cc83268C1B8FC
       - name: Space # A reference to the global Space contract definition
   - id: 11155111 # Ethereum Sepolia
     start_block: 7638308
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0xe1026Ab8272746dc93Efcd1423355F3b23E3e0aB
+          - 0x05880666779aeE8ff9492740c64cc83268C1B8FC
       - name: Space # A reference to the global Space contract definition
