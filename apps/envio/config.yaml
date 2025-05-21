@@ -29,6 +29,12 @@ contracts:
       - event: Transfer(address indexed from, address indexed to, uint256 value)
 networks:
   - id: 84532 # Base Sepolia
+    rpc:
+      - url: https://base-sepolia.drpc.org
+        for: fallback
+      - url: https://sepolia.base.org
+        for: fallback
+        initial_block_interval: 1000
     start_block: 25689188
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
@@ -36,6 +42,12 @@ networks:
           - 0x05880666779aeE8ff9492740c64cc83268C1B8FC
       - name: Space # A reference to the global Space contract definition
   - id: 11155111 # Ethereum Sepolia
+    rpc:
+      - url: https://ethereum-sepolia-rpc.publicnode.com
+        for: fallback
+      - url: https://sepolia.drpc.org
+        for: fallback
+        initial_block_interval: 1000
     start_block: 8318596
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
