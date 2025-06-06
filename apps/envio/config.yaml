@@ -28,6 +28,32 @@ contracts:
       - event: NativeReceived(address indexed from, uint256 amount)
       - event: Transfer(address indexed from, address indexed to, uint256 value)
 networks:
+  - id: 8453 # Base
+    rpc:
+      - url: https://base-mainnet.g.alchemy.com/v2/%env:ALCHEMY_KEY%
+        for: fallback
+      - url: https://base.llamarpc.com
+        for: fallback
+        initial_block_interval: 1000
+    start_block: 31167037
+    contracts:
+      - name: StationRegistry # A reference to the global StationRegistry contract definition
+        address:
+          - 0xA678C48d5860dA60B5C2A44B02315dFbaED6D91a
+      - name: Space # A reference to the global Space contract definition
+  - id: 1 # Ethereum
+    rpc:
+      - url: https://eth-mainnet.g.alchemy.com/v2/%env:ALCHEMY_KEY%
+        for: fallback
+      - url: https://eth.llamarpc.com
+        for: fallback
+        initial_block_interval: 1000
+    start_block: 31167037
+    contracts:
+      - name: StationRegistry # A reference to the global StationRegistry contract definition
+        address:
+          - 0xA678C48d5860dA60B5C2A44B02315dFbaED6D91a
+      - name: Space # A reference to the global Space contract definition
   - id: 84532 # Base Sepolia
     rpc:
       - url: https://base-sepolia.drpc.org
