@@ -48,7 +48,7 @@ networks:
       - url: https://eth.llamarpc.com
         for: fallback
         initial_block_interval: 1000
-    start_block: 31167037
+    start_block: 0
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
