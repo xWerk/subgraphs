@@ -30,52 +30,28 @@ contracts:
 unordered_multichain_mode: true
 networks:
   - id: 8453 # Base
-    rpc:
-      - url: https://base-mainnet.g.alchemy.com/v2/%env:ALCHEMY_KEY%
-        for: fallback
-      - url: https://base.llamarpc.com
-        for: fallback
-        initial_block_interval: 1000
-    start_block: 31167037
+    start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
           - 0xA678C48d5860dA60B5C2A44B02315dFbaED6D91a
       - name: Space # A reference to the global Space contract definition
   - id: 1 # Ethereum
-    rpc:
-      - url: https://eth-mainnet.g.alchemy.com/v2/%env:ALCHEMY_KEY%
-        for: fallback
-      - url: https://eth.llamarpc.com
-        for: fallback
-        initial_block_interval: 1000
-    start_block: 0
+    start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
           - 0xA678C48d5860dA60B5C2A44B02315dFbaED6D91a
       - name: Space # A reference to the global Space contract definition
   - id: 84532 # Base Sepolia
-    rpc:
-      - url: https://base-sepolia.drpc.org
-        for: fallback
-      - url: https://sepolia.base.org
-        for: fallback
-        initial_block_interval: 1000
-    start_block: 25689188
+    start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
           - 0x05880666779aeE8ff9492740c64cc83268C1B8FC
       - name: Space # A reference to the global Space contract definition
   - id: 11155111 # Ethereum Sepolia
-    rpc:
-      - url: https://ethereum-sepolia-rpc.publicnode.com
-        for: fallback
-      - url: https://sepolia.drpc.org
-        for: fallback
-        initial_block_interval: 1000
-    start_block: 8318596
+    start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
