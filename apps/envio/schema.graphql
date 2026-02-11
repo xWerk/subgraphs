@@ -14,27 +14,6 @@ type StationRegistry_ModuleKeeperUpdated {
   newModuleKeeper: String!
 }
 
-type StationRegistry_RoleAdminChanged {
-  id: ID!
-  role: String!
-  previousAdminRole: String!
-  newAdminRole: String!
-}
-
-type StationRegistry_RoleGranted {
-  id: ID!
-  role: String!
-  account: String!
-  sender: String!
-}
-
-type StationRegistry_RoleRevoked {
-  id: ID!
-  role: String!
-  account: String!
-  sender: String!
-}
-
 type StationRegistry_SignerAdded {
   id: ID!
   account: String!
@@ -55,14 +34,7 @@ type StationRegistry_Spaces {
 
 type StationRegistry_SpaceCreated {
   id: ID!
-  owner: String!
-  stationId: BigInt!
+  admin: String!
   space: String!
 }
 
-type StationRegistry_StationOwnershipTransferred {
-  id: ID!
-  stationId: BigInt!
-  oldOwner: String!
-  newOwner: String!
-}

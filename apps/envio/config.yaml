@@ -14,14 +14,10 @@ contracts:
   - name: StationRegistry
     handler: src/station-registry/index.ts
     events:
-      - event: SpaceCreated(address indexed owner, uint256 indexed stationId, address space)
+      - event: SpaceCreated(address indexed admin, address space)
       - event: ModuleKeeperUpdated(address newModuleKeeper)
-      - event: RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-      - event: RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-      - event: RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
       - event: SignerAdded(address indexed account, address indexed signer)
       - event: SignerRemoved(address indexed account, address indexed signer)
-      - event: StationOwnershipTransferred(uint256 indexed stationId, address oldOwner, address newOwner)
   - name: Space
     handler: src/space/index.ts
     events:
@@ -35,33 +31,33 @@ networks:
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x68cD175cDc22597d23997B894A9404004bd2d39F
+          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
       - name: Space # A reference to the global Space contract definition
   - id: 1 # Ethereum
     start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x68cD175cDc22597d23997B894A9404004bd2d39F
+          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
       - name: Space # A reference to the global Space contract definition
   - id: 84532 # Base Sepolia
     start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x68cD175cDc22597d23997B894A9404004bd2d39F
+          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
       - name: Space # A reference to the global Space contract definition
   - id: 11155111 # Ethereum Sepolia
     start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x68cD175cDc22597d23997B894A9404004bd2d39F
+          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
       - name: Space # A reference to the global Space contract definition
   - id: 999 # HyperEVM
     start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x68cD175cDc22597d23997B894A9404004bd2d39F
+          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
       - name: Space # A reference to the global Space contract definition
