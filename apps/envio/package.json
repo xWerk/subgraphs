@@ -10,7 +10,7 @@
     "dev": "envio dev",
     "stop": "envio stop",
     "test": "pnpm mocha",
-    "start": "ts-node generated/src/Index.bs.js"
+    "start": "envio start"
   },
   "devDependencies": {
     "@types/chai": "^4.3.11",
