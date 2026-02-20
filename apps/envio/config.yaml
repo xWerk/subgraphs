@@ -31,33 +31,33 @@ networks:
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
+          - 0x2A1F9a6e093Eee27B883f5B473a1f190010151a9
       - name: Space # A reference to the global Space contract definition
   - id: 1 # Ethereum
     start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
+          - 0x2A1F9a6e093Eee27B883f5B473a1f190010151a9
       - name: Space # A reference to the global Space contract definition
   - id: 84532 # Base Sepolia
     start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
+          - 0x2A1F9a6e093Eee27B883f5B473a1f190010151a9
       - name: Space # A reference to the global Space contract definition
   - id: 11155111 # Ethereum Sepolia
     start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
+          - 0x2A1F9a6e093Eee27B883f5B473a1f190010151a9
       - name: Space # A reference to the global Space contract definition
   - id: 999 # HyperEVM
     start_block: 0 # With HyperSync, you can use 0 regardless of contract deployment time
     contracts:
       - name: StationRegistry # A reference to the global StationRegistry contract definition
         address:
-          - 0x2D5a03Fc68b6098683E50e50F4CEBd44F920801d
+          - 0x2A1F9a6e093Eee27B883f5B473a1f190010151a9
       - name: Space # A reference to the global Space contract definition
